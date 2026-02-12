@@ -10,6 +10,6 @@ node_modules/
 *.png
 *.jpg
 *.jpeg
-*.webp
+
 !core/assets/
 !README.md
