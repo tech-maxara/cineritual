@@ -1,0 +1,47 @@
+{
+    "name": "CineRitual",
+    "version": "1.0.0",
+    "description": "The world's easiest AI-powered 3D & cinematic website builder",
+    "author": "Maxara",
+    "repository": "https://github.com/tech-maxara/cineritual",
+    "homepage": "https://github.com/tech-maxara/cineritual",
+    "capabilities": [
+        "Generate AI prompts for video creation",
+        "Convert video to optimized frames",
+        "Build cinematic scroll-sync websites",
+        "Apply premium design themes",
+        "Deploy to GitHub Pages/Netlify"
+    ],
+    "techStack": {
+        "core": "Vanilla JavaScript",
+        "animation": "GSAP + ScrollTrigger",
+        "rendering": "HTML5 Canvas",
+        "styling": "CSS3 (Glassmorphism)",
+        "processing": "ffmpeg",
+        "ai": "AI-native with .skills folder"
+    },
+    "workflows": {
+        "quick": ".agent/workflows/quick-start.md",
+        "advanced": ".agent/workflows/advanced.md"
+    },
+    "skills": {
+        "directory": ".skills/",
+        "available": [
+            "create-cinematic-site",
+            "generate-prompts",
+            "process-video",
+            "customize-theme",
+            "deploy-site"
+        ],
+        "entryPoint": ".skills/README.md"
+    },
+    "aiAgents": {
+        "compatible": [
+            "Claude Code",
+            "GitHub Copilot",
+            "Cursor",
+            "Gemini CLI"
+        ],
+        "protocol": "MCP-compatible"
+    }
+}
