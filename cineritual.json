@@ -1,0 +1,14 @@
+{
+    "projectName": "My Cinematic Ritual",
+    "theme": "dark_chocolate",
+    "engine": {
+        "frameCount": 60,
+        "imagePath": "./images/frame-",
+        "scrollTriggerEnd": "+=150%",
+        "scrub": 0.1
+    },
+    "typography": {
+        "headline": "Playfair Display",
+        "body": "Inter"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "cine-ritual",
+    "version": "1.0.0",
+    "description": "Automation for the next generation of Cinematic Web Experiences.",
+    "main": "core/engine.js",
+    "bin": {
+        "cine-ritual": "utils/init.js"
+    },
+    "scripts": {
+        "process-media": "node utils/frame-converter.js",
+        "init": "node utils/init.js"
+    },
+    "keywords": [
+        "cinematic",
+        "gsap",
+        "scrolltrigger",
+        "motion-design",
+        "web-animation",
+        "ai-web-design"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tech-maxara/cineritual"
+    },
+    "author": "Maxara",
+    "license": "MIT",
+    "dependencies": {
+        "gsap": "^3.12.2"
+    }
+}

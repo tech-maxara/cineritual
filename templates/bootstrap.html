@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineRitual | The Extraordinary Web</title>
+
+    <!-- Dependencies -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../cineritual/core/ui.css">
+
+    <style>
+        /* Project-specific overrides */
+        :root {
+            --accent: #c69c6d;
+            /* Re-evoke your golden ritual here */
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <!-- The Ritual Hero -->
+        <section class="ritual-hero">
+            <div class="ritual-canvas-container">
+                <canvas id="ritual-canvas"></canvas>
+            </div>
+
+            <div class="ritual-overlay">
+                <div class="ritual-content" style="text-align: center; max-width: 800px;">
+                    <span class="eyebrow" style="opacity:0; transform:translateY(20px);">CineRitual Template</span>
+                    <h1 class="headline"
+                        style="opacity:0; transform:translateY(30px); font-size: 5rem; line-height: 1;">Build the
+                        <em>Extraordinary</em>
+                    </h1>
+                    <p class="subtext"
+                        style="opacity:0; transform:translateY(20px); margin: 2rem auto; font-size: 1.2rem; max-width: 600px;">
+                        Replace these frames with your ritual media and evoke the soul of your brand.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Staggered Content Section -->
+        <section class="ritual-details" style="padding: 10rem 5%;">
+            <div class="ritual-glass" style="padding: 5rem; text-align: center;">
+                <h2>The Alchemy of Motion</h2>
+                <p>Add your sections here. Use the .ritual-glass class for immediate premium aesthetics.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../cineritual/core/engine.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize the Ritual
+            const ritual = new CineRitual({
+                frameCount: 60, // Match your extracted frames
+                imagePath: './images/frame-',
+                scrollTriggerEnd: '+=150%'
+            });
+
+            // Entrance Animations
+            const tl = gsap.timeline({ delay: 0.5 });
+            tl.to(".eyebrow", { opacity: 1, y: 0, duration: 1 })
+                .to(".headline", { opacity: 1, y: 0, duration: 1 }, "-=0.6")
+                .to(".subtext", { opacity: 1, y: 0, duration: 1 }, "-=0.6");
+        });
+    </script>
+</body>
+
+</html>

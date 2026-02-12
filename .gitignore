@@ -1,0 +1,15 @@
+# CineRitual Ignore
+node_modules/
+.DS_Store
+
+# Local Media (Users should not push their heavy raw assets)
+**/source/
+**/images/
+*.mp4
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.webp
+!core/assets/
+!README.md
