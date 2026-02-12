@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/maxara-logo.jpeg" alt="Maxara" width="140"/>
+<img src="assets/maxara-logo.webp" alt="Maxara" width="140"/>
 
 # CineRitual
 
