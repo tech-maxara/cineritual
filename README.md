@@ -2,14 +2,13 @@
 
 <img src="assets/maxara-logo.jpeg" alt="Maxara" width="140"/>
 
-# ✦ CineRitual
+# CineRitual
 
 **The World's Easiest AI-Powered 3D & Cinematic Website Builder**  
-*Create a masterpiece in 5 minutes*
+Create a masterpiece in 5 minutes
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-c69c6d?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![GitHub Stars](https://img.shields.io/github/stars/tech-maxara/cineritual?style=for-the-badge&color=c69c6d&logo=github)](https://github.com/tech-maxara/cineritual/stargazers)
-[![NPM Version](https://img.shields.io/npm/v/cine-ritual?style=for-the-badge&color=c69c6d&logo=npm)](https://www.npmjs.com/package/cine-ritual)
 [![Built by Maxara](https://img.shields.io/badge/Built_by-Maxara-c69c6d?style=for-the-badge)](https://github.com/tech-maxara)
 
 ![CineRitual Demo](assets/hero_compressed.gif)
@@ -18,189 +17,247 @@
 
 ---
 
-<details>
-<summary><strong>📖 Table of Contents</strong></summary>
+## What is CineRitual?
 
-- [About](#about)
-- [Features](#features)
-- [Comparison](#comparison)
-- [Quick Start](#quick-start)
-- [Architecture](#architecture)
-- [Contributing](#contributing)
+CineRitual is a framework that transforms static websites into cinematic, scroll-driven experiences. Instead of complex 3D libraries like Three.js, it uses a simple video-to-frames approach that creates stunning visual effects with minimal code.
 
-</details>
+**AI-Native Design**: CineRitual includes a `.skills` folder that allows AI coding assistants (Claude, Cursor, GitHub Copilot) to understand and execute complete workflows. Tell your AI "Create a luxury watch site" and it handles everything from video prompt generation to deployment.
 
 ---
 
-## About
+## How It Works
 
-**CineRitual** is a high-performance framework designed to transform cold, static websites into mesmerizing, 3D-feeling cinematic rituals. No Three.js complexity. No Spline learning curve. Just stunning results in minutes.
+1. **Provide a video** (3-10 seconds, MP4 format)
+2. **CineRitual extracts frames** from your video
+3. **Frames sync with scroll** creating a 3D-feeling animation
+4. **Add your content** over the cinematic background
 
-**🤖 AI-Native**: CineRitual includes a `.skills` folder that allows AI agents (Claude, Cursor, GitHub Copilot) to discover and execute workflows through natural language. Just say *"Create a luxury watch site"* and the AI handles everything from prompt generation to deployment.
+---
+
+## Quick Start Guide
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- ffmpeg ([Download here](https://ffmpeg.org/download.html))
+- A video file (MP4, 3-10 seconds)
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/tech-maxara/cineritual.git
+cd cineritual
+```
+
+### Step 2: Initialize a New Project
+
+```bash
+node utils/init.js my-project
+```
+
+This creates a new project folder with the complete structure:
+```
+my-project/
+├── source/       # Place your video here
+├── images/       # Frames will be saved here
+├── index.html    # Your website
+└── .gitignore    # Git configuration
+```
+
+### Step 3: Add Your Video
+
+Copy your video file into the `source/` folder:
+
+```bash
+# Windows
+copy your-video.mp4 my-project\source\video.mp4
+
+# Mac/Linux
+cp your-video.mp4 my-project/source/video.mp4
+```
+
+### Step 4: Process Video into Frames
+
+```bash
+cd my-project
+node ../utils/frame-converter.js source/video.mp4 images/ 60
+```
+
+This command:
+- Extracts 60 frames from your video
+- Saves them as `frame-001.jpg`, `frame-002.jpg`, etc.
+- Optimizes them for web display
+
+### Step 5: Customize Your Site
+
+Open `index.html` and update the content:
+
+```html
+<div class="ritual-content">
+    <span class="eyebrow">Your Brand</span>
+    <h1 class="headline">Your <em>Headline</em></h1>
+    <p class="subtext">Your description goes here.</p>
+</div>
+```
+
+### Step 6: Test Locally
+
+Open `index.html` in your browser. Scroll to see the cinematic effect in action.
+
+### Step 7: Deploy
+
+**GitHub Pages** (Free):
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
+```
+
+Then enable GitHub Pages in your repository settings.
+
+**Netlify** (Easiest):
+1. Go to https://app.netlify.com
+2. Drag and drop your project folder
+3. Done
 
 ---
 
 ## Features
 
-<table>
-<tr>
-<td width="50px" align="center">
-<img src="https://cdn.simpleicons.org/filmdot/c69c6d" width="32"/>
-</td>
-<td>
-<strong>Cinematic Frame-Sync Engine</strong><br/>
-Synchronize high-resolution video frames with scroll progress for buttery-smooth 3D-feeling animations. No WebGL complexity, no Three.js learning curve.
-</td>
-</tr>
+### Cinematic Frame-Sync Engine
+Synchronize high-resolution video frames with scroll progress for smooth 3D-feeling animations. No WebGL complexity required.
 
-<tr>
-<td width="50px" align="center">
-<img src="https://cdn.simpleicons.org/lightning/c69c6d" width="32"/>
-</td>
-<td>
-<strong>5-Minute Setup</strong><br/>
-Go from raw video to a live, production-ready cinematic website in under 5 minutes. One command to initialize, one command to process media.
-</td>
-</tr>
+### 5-Minute Setup
+From raw video to deployed site in under 5 minutes. Simple commands, no complex configuration.
 
-<tr>
-<td width="50px" align="center">
-<img src="https://cdn.simpleicons.org/openai/c69c6d" width="32"/>
-</td>
-<td>
-<strong>AI-Native Workflow</strong><br/>
-Built-in prompt templates for Gemini, Midjourney, and Flux. Generate your brand colors, copy, and visual assets with AI—then drop them into your site.
-</td>
-</tr>
+### AI-Native Workflow
+Built-in prompt templates for Gemini, Midjourney, and Flux. AI agents can execute complete workflows through natural language.
 
-<tr>
-<td width="50px" align="center">
-<img src="https://cdn.simpleicons.org/palette/c69c6d" width="32"/>
-</td>
-<td>
-<strong>Premium Design System</strong><br/>
-Glassmorphism, storytelling typography, and curated color palettes out of the box. Every site looks like it cost $10k to build.
-</td>
-</tr>
+### Premium Design System
+Glassmorphism effects, storytelling typography, and curated color palettes included. Professional results out of the box.
 
-<tr>
-<td width="50px" align="center">
-<img src="https://cdn.simpleicons.org/npm/c69c6d" width="32"/>
-</td>
-<td>
-<strong>Zero Dependencies</strong><br/>
-Vanilla JavaScript core. No React, no Vue, no build step required. Just HTML, CSS, and the magic of GSAP.
-</td>
-</tr>
-</table>
+### Zero Dependencies
+Vanilla JavaScript core. No React, no Vue, no build step. Just HTML, CSS, and GSAP for animations.
 
-### Perfect for
-- **Luxury Brands**: Watches, fashion, automotive
-- **Creative Agencies**: Portfolio sites, case studies
-- **Product Launches**: SaaS, apps, physical products
-- **Personal Brands**: Designers, photographers, artists
+### Perfect For
+- Luxury product showcases (watches, fashion, jewelry)
+- Tech product launches (SaaS, apps)
+- Creative portfolios (designers, photographers)
+- Real estate presentations
+- Restaurant and food brands
 
 ---
 
-## Comparison
+## Customization
 
-| Feature | CineRitual | Three.js | Spline | Webflow |
-|---------|:----------:|:--------:|:------:|:-------:|
-| **Setup Time** | 5 minutes | Hours | Hours | Days |
-| **3D Complexity** | None (frame-sync) | High | Medium | N/A |
-| **AI Integration** | ✅ Built-in | ❌ Manual | ❌ Manual | ❌ Manual |
-| **Code Required** | Minimal | Expert | None | None |
-| **Performance** | ⚡ Excellent | ⚠️ Variable | ✅ Good | ✅ Good |
-| **Cost** | 🆓 Free | 🆓 Free | 💰 $$ | 💰💰 $$$ |
-| **Customization** | ✅ Full control | ✅ Full control | ⚠️ Limited | ⚠️ Limited |
+### Themes
 
----
+CineRitual includes 3 pre-designed themes:
 
-## Quick Start
+**Dark Chocolate** (Warm & Elegant)
+- Background: `#120906`
+- Accent: `#c69c6d`
+- Best for: Luxury brands, watches, fashion
 
-### 1️⃣ Initialize Your Project
+**Night Neon** (Futuristic & Bold)
+- Background: `#050510`
+- Accent: `#00f2ff`
+- Best for: Tech products, gaming, crypto
 
-Run this command to create a new CineRitual project:
+**Minimal Platinum** (Clean & Sophisticated)
+- Background: `#f9f9f9`
+- Accent: `#111111`
+- Best for: Architecture, real estate, minimalist brands
 
-```bash
-npx cine-ritual init my-luxury-site
+### Scroll Speed
+
+Adjust the scroll speed in your `index.html`:
+
+```javascript
+const ritual = new CineRitual({
+    frameCount: 60,
+    scrollTriggerEnd: '+=150%'  // Change this value
+});
 ```
 
-**What happens**: Creates `my-luxury-site/` with the complete folder structure, config file, and template.
+- `+=100%` = Fast (1 viewport scroll)
+- `+=150%` = Medium (recommended)
+- `+=200%` = Slow (2 viewport scrolls)
 
----
+### Custom Colors
 
-### 2️⃣ Add Your Video
+Edit CSS variables in `index.html`:
 
-Place your `.mp4` video file in the `/source` folder:
-
-```bash
-# Example: Copy your video
-cp your-video.mp4 my-luxury-site/source/
-```
-
----
-
-### 3️⃣ Process Media
-
-Convert your video into optimized frames:
-
-```bash
-npm run process-media
-```
-
-**What happens**: Uses `ffmpeg` to extract 60 high-quality frames and saves them to `/images`.
-
----
-
-### 4️⃣ Customize Your Aesthetic
-
-Edit `cineritual.json` to define your brand:
-
-```json
-{
-  "projectName": "My Luxury Brand",
-  "theme": "dark_chocolate",
-  "engine": {
-    "frameCount": 60,
-    "scrollTriggerEnd": "+=150%"
-  }
+```css
+:root {
+    --accent: #c69c6d;     /* Your brand color */
+    --bg-main: #0d0604;    /* Background color */
+    --text-main: #f5f0e1;  /* Text color */
 }
 ```
 
-**What happens**: The engine automatically applies your colors, typography, and scroll behavior.
+---
+
+## AI Skills
+
+CineRitual includes AI-executable workflows in the `.skills/` folder:
+
+- **create-cinematic-site** - Complete workflow from concept to deployment
+- **generate-prompts** - AI prompts for video creation
+- **process-video** - Video-to-frames conversion
+- **customize-theme** - Theme customization
+- **deploy-site** - One-click deployment
+
+AI coding assistants can read these skills and execute them through natural language commands.
 
 ---
 
-### 5️⃣ Launch
+## Project Structure
 
-Open `index.html` in your browser and scroll to experience the magic! 🎬
-
----
-
-## Architecture
-
-```text
-cineritual/
-├── .skills/          # AI-Executable Workflows
-│   ├── README.md     # AI entry point
-│   ├── create-cinematic-site.md
-│   ├── generate-prompts.md
-│   ├── process-video.md
-│   ├── customize-theme.md
-│   └── deploy-site.md
-├── .agent/           # AI Context & Configuration
-│   ├── context.json  # Project capabilities
-│   └── workflows/    # Workflow guides
-├── core/             # The Frame-Sync Engine (GSAP-powered)
-│   ├── engine.js     # Universal scroll-scrub class
-│   └── ui.css        # Premium design system
-├── templates/        # Universal Structural Boilerplate
-│   └── bootstrap.html
-└── utils/            # Media Processing & Automation
-    ├── frame-converter.js  # Video → Frames (ffmpeg)
-    └── init.js             # Project initializer
 ```
+cineritual/
+├── .skills/              # AI-executable workflows
+├── .agent/               # AI context and configuration
+├── core/
+│   ├── engine.js         # Frame-sync animation engine
+│   └── ui.css            # Design system
+├── templates/
+│   └── bootstrap.html    # Project template
+├── utils/
+│   ├── frame-converter.js  # Video processing
+│   └── init.js             # Project initializer
+├── assets/
+│   ├── hero_compressed.gif
+│   └── maxara-logo.jpeg
+└── README.md
+```
+
+---
+
+## Troubleshooting
+
+**Frames not loading?**
+- Verify `frameCount` in your script matches the actual number of frames
+- Check frame naming: `frame-001.jpg`, `frame-002.jpg`, etc.
+- Look for 404 errors in browser console
+
+**Scroll animation not working?**
+- Ensure GSAP and ScrollTrigger CDN links are present in HTML
+- Verify the canvas element has the correct class
+- Check browser console for JavaScript errors
+
+**Performance issues?**
+- Reduce frame count to 40 or 30
+- Compress images using TinyPNG or similar tools
+- Consider using WebP format instead of JPEG
+
+**ffmpeg not found?**
+- Download from https://ffmpeg.org/download.html
+- Add ffmpeg to your system PATH
+- Restart your terminal after installation
 
 ---
 
@@ -208,18 +265,24 @@ cineritual/
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-**Ways to contribute**:
-- 🐛 Report bugs
-- 💡 Suggest features
-- 🎨 Share your CineRitual sites in [Discussions](https://github.com/tech-maxara/cineritual/discussions)
-- 🔧 Submit pull requests
+Ways to contribute:
+- Report bugs via [Issues](https://github.com/tech-maxara/cineritual/issues)
+- Suggest features
+- Share your CineRitual sites in [Discussions](https://github.com/tech-maxara/cineritual/discussions)
+- Submit pull requests
+
+---
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
 **Built with passion by [Maxara](https://github.com/tech-maxara)**  
-*For the extraordinary.*
+For the extraordinary.
 
 [![Star this repo](https://img.shields.io/github/stars/tech-maxara/cineritual?style=social)](https://github.com/tech-maxara/cineritual)
 
