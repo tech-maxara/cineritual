@@ -36,6 +36,8 @@
 
 **CineRitual** is a high-performance framework designed to transform cold, static websites into mesmerizing, 3D-feeling cinematic rituals. No Three.js complexity. No Spline learning curve. Just stunning results in minutes.
 
+**🤖 AI-Native**: CineRitual includes a `.skills` folder that allows AI agents (Claude, Cursor, GitHub Copilot) to discover and execute workflows through natural language. Just say *"Create a luxury watch site"* and the AI handles everything from prompt generation to deployment.
+
 ---
 
 ## Features
@@ -180,11 +182,19 @@ Open `index.html` in your browser and scroll to experience the magic! 🎬
 
 ```text
 cineritual/
+├── .skills/          # AI-Executable Workflows
+│   ├── README.md     # AI entry point
+│   ├── create-cinematic-site.md
+│   ├── generate-prompts.md
+│   ├── process-video.md
+│   ├── customize-theme.md
+│   └── deploy-site.md
+├── .agent/           # AI Context & Configuration
+│   ├── context.json  # Project capabilities
+│   └── workflows/    # Workflow guides
 ├── core/             # The Frame-Sync Engine (GSAP-powered)
 │   ├── engine.js     # Universal scroll-scrub class
 │   └── ui.css        # Premium design system
-├── skills/           # AI Context & Prompt Books
-│   └── skills.json   # Master prompts for Gemini/Midjourney
 ├── templates/        # Universal Structural Boilerplate
 │   └── bootstrap.html
 └── utils/            # Media Processing & Automation

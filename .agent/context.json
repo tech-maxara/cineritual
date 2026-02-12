@@ -20,6 +20,35 @@
         "processing": "ffmpeg",
         "ai": "AI-native with .skills folder"
     },
+    "aesthetics": {
+        "dark_chocolate": {
+            "name": "Dark Chocolate",
+            "description": "Warm & elegant for luxury brands",
+            "colors": {
+                "bg": "#120906",
+                "accent": "#c69c6d",
+                "text": "#f5f0e1"
+            }
+        },
+        "night_neon": {
+            "name": "Night Neon",
+            "description": "Futuristic & bold for tech products",
+            "colors": {
+                "bg": "#050510",
+                "accent": "#00f2ff",
+                "text": "#ffffff"
+            }
+        },
+        "minimal_platinum": {
+            "name": "Minimal Platinum",
+            "description": "Clean & sophisticated for architecture",
+            "colors": {
+                "bg": "#f9f9f9",
+                "accent": "#111111",
+                "text": "#222222"
+            }
+        }
+    },
     "workflows": {
         "quick": ".agent/workflows/quick-start.md",
         "advanced": ".agent/workflows/advanced.md"
