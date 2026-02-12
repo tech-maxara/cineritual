@@ -11,7 +11,7 @@ Create a masterpiece in 5 minutes
 [![GitHub Stars](https://img.shields.io/github/stars/tech-maxara/cineritual?style=for-the-badge&color=c69c6d&logo=github)](https://github.com/tech-maxara/cineritual/stargazers)
 [![Built by Maxara](https://img.shields.io/badge/Built_by-Maxara-c69c6d?style=for-the-badge)](https://github.com/tech-maxara)
 
-![CineRitual Demo](assets/hero_compressed.gif)
+![CineRitual Demo](assets/hero.gif)
 
 </div>
 
